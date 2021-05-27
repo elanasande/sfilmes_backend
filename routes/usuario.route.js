@@ -1,7 +1,10 @@
 const router = require('express').Router();
 const usuarioController = require('../controllers/usuario.controller');
+//const authController = require('../controllers/auth.controller');
 
 usuarioRouter = () => {
+  //usar para proteger as rotas do usuario com a autenticação
+  //router.use(authController.isAuthenticated);
   router
     .route('/')
     //Rota para exibir todos os usuarios
