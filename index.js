@@ -11,24 +11,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Configurar db mongoose
-const dbConfig = { url: 'mongodb://localhost:27017/lanchonete' };
-
-const mongoose = require('mongoose');
-
-mongoose.Promise = global.Promise;
-
-// Conectar ao Mongo
-mongoose
-  .connect(dbConfig.url, {
-    useNewUrlParser: true,
-  })
-  .then(() => {
-    console.log('Successo ao conectar a base de dados. ');
-  })
-  .catch((err) => {
-    console.log('Não foi possivel conectar ao bd. ', err);
-    process.exit();
-  });
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+});
 
 // Definindo uma rota
 app.get('/', (req, res) => {
