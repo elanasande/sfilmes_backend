@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const cors = require("cors");
+const cors = require('cors');
 
 // criar express app
 const app = express();
@@ -30,6 +30,9 @@ app.use('/usuario', usuarioRouter());
 
 const authRouter = require('./routes/auth.route');
 app.use('/auth', authRouter());
+
+const filmeRouter = require('./routes/filmes.route');
+app.use('/filmes', filmeRouter());
 
 // listen for requests
 app.listen(process.env.PORT || 5000, () => {

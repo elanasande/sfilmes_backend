@@ -62,7 +62,7 @@ const getOne = async (req, res) => {
 //UPDATE Usuário
 const update = async (req, res) => {
   try {
-    const usuario = await usuario.findOne({
+    const usuario = await Usuario.findOne({
       email: req.params.email.toUpperCase(),
     });
 
