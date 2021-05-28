@@ -32,7 +32,7 @@ const authRouter = require('./routes/auth.route');
 app.use('/auth', authRouter());
 
 const filmeRouter = require('./routes/filmes.route');
-app.use('/filmes', filmeRouter());
+app.use('/filme', filmeRouter());
 
 // listen for requests
 app.listen(process.env.PORT || 5000, () => {
