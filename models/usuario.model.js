@@ -9,6 +9,14 @@ const UsuarioSchema = new mongoose.Schema({
     type: String,
     default: '',
   },
+  primaryName: {
+    type: String,
+    default: '',
+  },
+  lastName: {
+    type: String,
+    default: '',
+  },
   isDeleted: {
     type: Boolean,
     default: false,
